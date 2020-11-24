@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1>takayg's blog</h1>
+        <h2>welcome!</h2>
+        <hr class="my-4">
+        <h5>In this blog, I will write about competitive programming and algorithms.</h5>
+    </div>
+    <div class="container">
+        <h1>New Post</h1>
+        <div class="container my-3 py-4 border">
+            {% for post in posts %}
+                <ul>
+                    <li>
+                        {{ post.published_date }}
+                        {{ post.title }}
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+        <h1>Link</h1>
+        <div class="row my-3">
+            <div class="col-4 col-lg-2 border px-3 py-3 text-center">
+                <img src="{% static 'img/twitter_img.jpg' %}" class="img-fluid">
+                <p><a href="https://twitter.com/takayg1" target="_blank">Twitter</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
