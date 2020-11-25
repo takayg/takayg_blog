@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="blog-detail-back"> 
+    <div class="container blog-detail p-5">
+        <div class="title"><h1>{{ post.title }}</h1></div>
+        <div class="text">
+            {{ post.formatted_markdown |safe }}
+        </div>
+        <hr>
+        <div class="created-date">
+            <strong>作成日時</strong>
+            <p>{{ post.created_date }}</p>
+        </div>
+        <hr>
+        <div class="updated-date">
+            <strong>更新日時</strong>
+            <p>{{ post.published_date }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
