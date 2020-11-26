@@ -15,4 +15,18 @@
     text-align: center;
     margin-bottom: 40px;
 }
-  
+
+.footer {
+    color: #fff;
+    background-color: #6666FF;
+    height: 140px;
+    padding: 40px;
+}
+
+.footer-logo {
+    font-size: 24px;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}

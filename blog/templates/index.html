@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="jumbotron text-center">
-        <h1>takayg's blog</h1>
+        <h1>takayg's <span style="color: red;">blog</span></h1>
         <h2>welcome!</h2>
         <hr class="my-4">
         <h5>In this blog, I will write about competitive programming and algorithms.</h5>
@@ -13,9 +13,9 @@
             {% for post in posts %}
                 <ul>
                     <li>
-                        {{ post.published_date }}
+                        {{ post.published_date|date:"Y/n/j H:i" }}
                         {{ post.title }}
-                        <a href="{% url 'detail' slug=post.slug %}">詳細</a>
+                        <a href="{% url 'detail' slug=post.slug %}">detail</a>
                     </li>
                 </ul>
             {% endfor %}

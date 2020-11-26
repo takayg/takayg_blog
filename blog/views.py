@@ -16,3 +16,10 @@ class PostDetailView(generic.DetailView):
     slug_field = "slug"
     slug_url_kwarg = "slug"
     context_object_name = 'post'
+
+class PostListView(generic.ListView):
+    template_name = "post_list.html"
+    queryset = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0:5]
+    paginate_by = 20
+    context_object_name = 'posts'
+
