@@ -61,7 +61,6 @@ ROOT_URLCONF = 'takayg_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,6 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+   os.path.join(BASE_DIR, "assets"),
+)
 
 # ファイルアップロードの設定
 MEDIA_URL = '/media/'

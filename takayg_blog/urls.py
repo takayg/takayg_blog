@@ -22,3 +22,5 @@ urlpatterns = [
 
     path('markdownx/', include('markdownx.urls')),
 ]
+
+admin.site.site_header = "takayg's blog" 
