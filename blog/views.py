@@ -19,7 +19,11 @@ class PostDetailView(generic.DetailView):
 
 class PostListView(generic.ListView):
     template_name = "post_list.html"
-    queryset = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0:5]
+    queryset = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     paginate_by = 20
     context_object_name = 'posts'
+
+class NotFoundView(generic.TemplateView):
+    template_name = "404.html"
+    
 

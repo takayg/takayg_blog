@@ -17,8 +17,7 @@
 }
 
 .footer {
-    color: #fff;
-    background-color: #6666FF;
+    background-color: #eee;
     height: 140px;
     padding: 40px;
 }
@@ -29,4 +28,8 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+    color: blueviolet;
 }

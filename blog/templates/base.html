@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: blueviolet;">
+<body class="d-flex flex-column" style="min-height: 100vh;" >
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:blueviolet;">
         <a class="navbar-brand" href="{% url 'index' %}">takayg's blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,17 +39,19 @@
             </ul>
         </div>
     </nav>
+    <main class="mb-auto">
     {% block content %}
     {% endblock %}
+    </main>
     <div class="footer">
-        <div class="footer-logo text-center"><a href="{% url 'index' %}" style="color: white;">takayg's blog</a></div>
+        <div class="footer-logo text-center"><a href="{% url 'index' %}" style="color: blueviolet;">takayg's blog</a></div>
         <div class="text-center mt-2">
-            <a href="{% url 'index' %}" style="color: white;">TOP |</a>
-            <a href="{% url 'list' %}" style="color: white;">All Posts |</a>
-            <a href="#" style="color: white;">Contests |</a>
-            <a href="#" style="color: white;">Algorithm |</a>
-            <a href="#" style="color: white;">Development |</a>
-            <a href="#" style="color: white;">Programming Language</a>
+            <a href="{% url 'index' %}" style="color: blueviolet;">TOP |</a>
+            <a href="{% url 'list' %}" style="color: blueviolet;">All Posts |</a>
+            <a href="#" style="color: blueviolet;">Contests |</a>
+            <a href="#" style="color: blueviolet;">Algorithm |</a>
+            <a href="#" style="color: blueviolet;">Development |</a>
+            <a href="#" style="color: blueviolet;">Programming Language</a>
         </div>
     </div>
 
