@@ -1,4 +1,4 @@
 Python
 Django
 dgango-markdownx
-django-taggit==1.1.0
+django-taggit
