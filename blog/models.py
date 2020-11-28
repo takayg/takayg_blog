@@ -3,6 +3,7 @@ from django.conf import settings
 from django.utils import timezone
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
+from taggit.managers import TaggableManager
 # Create your models here.
 
 class Post(models.Model):
@@ -12,6 +13,7 @@ class Post(models.Model):
     text = MarkdownxField('Contents', help_text='To Write with Markdown format')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    tags = TaggableManager(blank=True) 
 
     def publish(self):
         self.publish_date = timezone.now()

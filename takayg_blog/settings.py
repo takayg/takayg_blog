@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     'blog.apps.BlogConfig', # blog
     'markdownx', # Markdownx用
+    'taggit', # tag用
 ]
 
 MIDDLEWARE = [

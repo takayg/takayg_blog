@@ -11,7 +11,7 @@
         <h1 style="color: blueviolet;">New Post</h1>
         <div class="container my-3 py-4 border">
             {% for post in posts %}
-                <ul>
+                <ul class="checkmark">
                     <li>
                         {{ post.published_date|date:"Y/n/j H:i" }}
                         {{ post.title }}
@@ -20,11 +20,30 @@
                 </ul>
             {% endfor %}
         </div>
+        <h1 style="color: blueviolet;">Categories</h1>
+        <div class="container my-3 py-4 border">
+            {% for tag in tags %}
+            <ul class="checkmark">
+                <li>
+                    {{ tag }}
+                    <a href="{% url 'category' tag_name=tag %}">detail</a>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
         <h1 style="color: blueviolet;">Link</h1>
         <div class="row my-3">
             <div class="col-4 col-lg-2 border px-3 pt-3 text-center">
                 <img src="{% static 'img/twitter_img.jpg' %}" class="img-fluid">
                 <p class="pt-3"><a href="https://twitter.com/takayg1" target="_blank">Twitter</a></p>
+            </div>
+            <div class="col-4 col-lg-2 border px-3 pt-3 text-center">
+                <img src="{% static 'img/atcoder_img.jpg' %}" class="img-fluid">
+                <p class="pt-3"><a href="https://atcoder.jp/users/takayg" target="_blank">AtCoder</a></p>
+            </div>
+            <div class="col-4 col-lg-2 border px-3 pt-3 text-center">
+                <img src="{% static 'img/codeforces_img.jpg' %}" class="img-fluid">
+                <p class="pt-3"><a href="https://codeforces.com/profile/takayg" target="_blank">Codeforces</a></p>
             </div>
         </div>
     </div>
