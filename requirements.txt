@@ -1,4 +1,3 @@
-Python
 Django
 dgango-markdownx
 django-taggit
