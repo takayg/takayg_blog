@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container py-5">
+<div class="container p-5" style="background-color: white;">
     {% for post in posts %}
         <div>
-            <h2><a href="{% url 'detail' slug=post.slug %}">{{ post.title }}</a></h2>
+            <h3><a href="{% url 'detail' slug=post.slug %}">{{ post.title }}</a></h3>
             <p>published: {{ post.published_date|date:"Y/n/j H:i" }}</p>
         </div>
         <hr>

@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 </head>
-<body class="d-flex flex-column" style="min-height: 100vh;" >
+<body class="d-flex flex-column" style="min-height: 100vh; background-color: #f5f5f5;" >
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:blueviolet;">
         <a class="navbar-brand" href="{% url 'index' %}">takayg's blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,9 +39,32 @@
             </ul>
         </div>
     </nav>
+    {% if request.path == '/' %}
+        <div class="jumbotron text-center mb-0">
+            <h1 style="color: blueviolet;">takayg's blog</h1>
+            <h2>welcome!</h2>
+            <hr class="my-4">
+            <h5>In this blog, I will write about programming and algorithms.</h5>
+        </div>
+    {% endif %}
     <main class="mb-auto">
-    {% block content %}
-    {% endblock %}
+        <div class="container">
+            <div class="row pd-5">
+                <div class="col-lg-1 pt-5"></div>
+                <div class="col-lg-9 pt-5">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                <div class="col-lg-2 pt-5">
+                    <h3 style="color: blueviolet;">Categories</h3>
+                    <div class="my-4 p-3 border" style="background-color: white;">
+                        {% for tag in tags %}
+                            <p>・<a href="{% url 'category' tag_name=tag %}" style="color: blueviolet;">{{ tag }}</a></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <div class="footer">
         <div class="footer-logo text-center"><a href="{% url 'index' %}">takayg's blog</a></div>

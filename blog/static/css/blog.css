@@ -47,6 +47,12 @@ a:link, a:visited, a:hover, a:active {
     margin-bottom: 40px;
 }
 
+/* side bar */
+.sidebar_fixed {
+    position: sticky;
+    top: 60px;
+}
+
 /* footer */
 .footer {
     background-color: #eee;
@@ -57,6 +63,5 @@ a:link, a:visited, a:hover, a:active {
 .footer-logo {
     font-size: 24px;
 }
-
 
 
