@@ -23,4 +23,8 @@ urlpatterns = [
     path('markdownx/', include('markdownx.urls')),
 ]
 
+""" メディアファイルを扱う時の開発環境時の設定 """
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 admin.site.site_header = "takayg's blog" 
